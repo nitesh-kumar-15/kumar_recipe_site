@@ -1,0 +1,10 @@
+# Exclude .txt helper files (not part of project deliverables)
+*.txt
+
+# Development artifacts
+index_phase1.html
+index_full.html
+
+# OS files
+.DS_Store
+Thumbs.db
