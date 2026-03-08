@@ -72,9 +72,35 @@ kumar_recipe_site/
 |------|---------|
 | Home | Hero, featured recipes (3 cards) |
 | Recipes | Full grid of all 7 recipes |
-| Recipe Detail | Two-column layout: main content + Quick Facts sidebar, in-page nav |
+| Recipe Detail | Two-column layout: main content + Quick Facts sidebar (with Suggested for you), in-page nav |
 | About | Studio philosophy, Story Pack approach, contact info |
 | Team | Project leader info, responsibilities, time tracking |
+
+## Bonus Feature: Recommendation Engine UI
+
+This project includes **Bonus Feature 2: Recommendation Engine UI** — a CSS/HTML-only simulation of a personalized recipe suggestion system.
+
+### Purpose
+Simulates an AI-powered "suggested next step" experience: when viewing any recipe, users see 2–3 related recipes with confidence scores and explainability hints, as if a recommendation algorithm had analyzed their current context.
+
+### Implementation
+- **Where:** "Suggested for you" section in the right sidebar (aside) on every recipe detail page, filling the Quick Facts column
+- **Confidence labels:** Percentage badges (e.g., 92% match) on each suggested card, styled with a gradient pill
+- **Explainability hints:** Short text explaining why each recipe was suggested (e.g., "Similar cooking style · Cozy dishes", "Same protein · Quick weeknight")
+- **Suggested recipes:** Curated per-page; each recipe page shows 3 related recipes with different match reasons
+- **Tech:** Semantic HTML (`<section>`, `<article>`, `aria-labelledby`), CSS Grid for the card layout, no JavaScript
+
+### AI Concept Mapping
+The UI simulates a **recommendation system** (e.g., collaborative filtering or content-based filtering): given the current recipe (user state), it presents ranked alternatives with confidence scores and transparent reasoning — key concepts in explainable AI and personalized recommendation engines. All suggestions are static; the simulation conveys the *experience* of personalized recommendations without backend logic.
+
+### Testing Evidence
+1. **Layout:** Recommendation cards display in a single column in the sidebar on desktop; on mobile, they stack below the main recipe content.
+2. **Accessibility:** Confidence percentages use `aria-label` for screen readers; section has `aria-labelledby`; focus states on links follow project's `:focus-visible` standards.
+3. **Responsive:** At 768px breakpoint, recommendation grid collapses to a single column for readable mobile layout.
+
+### Trade-offs
+- Suggestions are hand-curated per recipe rather than dynamically generated.
+- No real personalization or user-history tracking — the "personalized" experience is simulated through varied, context-aware suggestions per page.
 
 ## Browser Support
 
